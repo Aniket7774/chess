@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .chessboard {
+            width: 320px;
+            height: 320px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .square {
+            width: 40px;
+            height: 40px;
+        }
+        .black {
+            background-color: #000;
+        }
+        .white {
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="chessboard"></div>
+
+    <script>
+        var chessboard = document.querySelector('.chessboard');
+
+        for (var i = 0; i < 8; i++) {
+            for (var j = 0; j < 8; j++) {
+                var square = document.createElement('div');
+                square.classList.add('square');
+                if ((i + j) % 2 == 0) 
+                {
+                    square.classList.add('white');
+                } else
+                 {
+                    square.classList.add('black');
+                }
+                chessboard.appendChild(square);
+            }
+        }
+    </script>
+</body>
+</html>
